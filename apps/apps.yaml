@@ -1,0 +1,15 @@
+---
+
+luefter_steuerung:
+  module: luefter
+  class: LuefterSteuerung
+  luefter: switch.steckdose1
+  thermometer: sensor.inverter_temperature
+  automatik: input_boolean.input_luefter_automatik
+  # Den Lüfter starten, falls die Temperatur in °C diesen Wert übersteigt:
+  start_temp: 45.0
+  # und stoppen, wenn sie auf/unter diesen Wert fällt:
+  stop_temp: 42.0
+  constrain_start_time: sunrise
+  constrain_end_time: sunset
+  constrain_input_boolean: input_boolean.input_luefter_automatik
